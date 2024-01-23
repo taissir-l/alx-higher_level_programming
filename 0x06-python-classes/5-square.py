@@ -1,40 +1,44 @@
 #!/usr/bin/python3
-"""ceates aSquare and set the size as private instance variable"""
+"""The square module"""
 
 
 class Square:
-    """class to create a square."""
+    """The class create square."""
 
-    def __init__(self, size):
-        """the initialzing size to piV
+    def __init__(self, size=0):
+        """private instance variable setter
 
         Args:
-            size (int): the square size
+            size (int): square size
         """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
         self.__size = size
 
-     def area(self):
-        """get the square area
+    def area(self):
+        """area of the square
 
         Args:
             None
 
         Returns:
-            square area
+            Area (int)
         """
         return (self.__size * self.__size)
 
     @property
     def size(self):
-        """gets size variable"""
+        """gets size of the  variable"""
         return (self.__size)
 
     @size.setter
     def size(self, value):
-        """size to value
+        """value of the size
 
         Args:
-            value: value reset
+            value: reset value
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -42,7 +46,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-     def my_print(self):
+    def my_print(self):
         """shows the square form the size"""
         value = self.__size
         for i in range(value):
