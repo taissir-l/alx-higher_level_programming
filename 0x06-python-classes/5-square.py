@@ -28,6 +28,7 @@ class Square:
     def size(self):
         """gets size variable"""
         return (self.__size)
+
     @size.setter
     def size(self, value):
         """size to value
@@ -42,15 +43,6 @@ class Square:
         self.__size = value
 
      def my_print(self):
-        """prints the square of the size"""
-        value = self.__size
-        for i in range(value):
-            [print('#', end='') for j in range(value)]
-            print('')
-        if value == 0:
-            print('')
-
-    def my_print(self):
         """shows the square form the size"""
         value = self.__size
         for i in range(value):
@@ -58,4 +50,3 @@ class Square:
             print('')
         if value == 0:
             print('')
-
