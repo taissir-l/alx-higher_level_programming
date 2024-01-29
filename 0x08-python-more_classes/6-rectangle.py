@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""class of a rectangle"""
+"""class that defines a rectangle"""
 
 
 class Rectangle:
-    """rectangle representation"""
+    """the rectangle"""
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """rectangle class
@@ -16,6 +17,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -33,7 +35,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """height attribute"""
+        """gets height attribute"""
         return self.__height
 
     @height.setter
@@ -56,7 +58,7 @@ class Rectangle:
         return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self) -> str:
-        """the rectangle defined for an object"""
+        """diagram of the rectangle defined for an object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
         rectangle = ""
@@ -68,4 +70,10 @@ class Rectangle:
         return (rectangle)
 
     def __repr__(self):
+        """string representation of the rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """a message for every object that is deleted"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
