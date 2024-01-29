@@ -1,25 +1,25 @@
 #!/usr/bin/python3
-"""class that represents a rectangle"""
+"""defines a rectangle"""
 
 
 class Rectangle:
-    """a rectangle"""
+    """Representation of  a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """ rectangle class
+        """rectangle class
         Args:
             width: width of the rectangle
             height: height of the rectangle
         Raises:
-            TypeError: not integer
-            ValueError: less than zero
+            TypeError: size is not integer
+            ValueError: size is less than zero
         """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """brings attribute"""
+        """gives width attribute"""
         return self.__width
 
     @width.setter
@@ -33,14 +33,26 @@ class Rectangle:
 
     @property
     def height(self):
-        """takes attribute"""
+        """takes height attribute"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """gets attribute"""
+        """getting height attribute"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """ area of the rectangle"""
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        """perimeter of the rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return ((self.__width * 2) + (self.__height * 2))
+
+
