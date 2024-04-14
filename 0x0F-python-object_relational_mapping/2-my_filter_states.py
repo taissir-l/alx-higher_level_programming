@@ -8,7 +8,6 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM `states` WHERE name='{:s}'\
             ORDER BY `id` ASC".format(sys.argv[4]))
-
     for a in cur.fetchall():
         print(a)
     cur.close()
