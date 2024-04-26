@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""URL that Fetches https://alx-intranet.hbtn.io/status
+"""URL that Fetches the URL
 """
-import urllib.request as request
-
+import urllib.request
 
 if __name__ == "__main__":
-    with request.urlopen("https://intranet.hbtn.io/status") as response:
-        if response.readable():
-            data = response.read()
-            print("Body response:")
-            print("\t- type: {}".format(type(data)))
-            print("\t- content: {}".format(data))
-            print("\t- utf8 content: {}".format(data.decode("utf-8")))
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        body = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(body)))
+        print("\t- content: {}".format(body))
+        print("\t- utf8 content: {}".format(body.decode('utf-8')))
