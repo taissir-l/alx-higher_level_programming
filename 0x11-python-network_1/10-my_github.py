@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """github id of a user
 """

@@ -25,4 +25,3 @@ if __name__ == "__main__":
                 commit_sha = commit['sha']
                 commit_author = commit['commit']['author']['name']
                 print('{}: {}'.format(commit_sha, commit_author))
-
