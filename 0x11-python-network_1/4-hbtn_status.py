@@ -9,4 +9,3 @@ if __name__ == "__main__":
     print("Body response:")
     print("\t- type: {}".format(type(h.text)))
     print("\t- content: {}".format(h.text))
-
