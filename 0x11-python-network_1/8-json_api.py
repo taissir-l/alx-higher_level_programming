@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+"""sends request to URL with a letter
 """
 
 import requests
